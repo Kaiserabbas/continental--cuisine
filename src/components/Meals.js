@@ -26,6 +26,7 @@ useEffect(() => {
       localStorage.setItem('likedMeals', JSON.stringify([...likedMeals, mealId]));
       dispatch(likeMeal(mealId));
     }
+
   };
 
 const handleShowComments = (mealId) => {
@@ -74,8 +75,10 @@ const handleClosePopup = () => {
         <div key={meal.idMeal} className='meal-item'>
           <img src={meal.strMealThumb} alt={meal.strMeal} onClick={() => handleShowComments(meal.idMeal)}/>
           <h2>{meal.strMeal}</h2>
-          <button disabled={likedMeals.includes(meal.idMeal)} onClick={() => handleLike(meal.idMeal)}>🖐 Like ({likedMeals.filter(id => id === meal.idMeal).length})</button>
-          <button onClick={() => handleShowComments(meal.idMeal)}>More Details</button>
+          <button className='comment-button'  onClick={() => handleShowComments(meal.idMeal)}>More Details...</button>
+          <button disabled={likedMeals.includes(meal.idMeal)} onClick={() => handleLike(meal.idMeal)} className='like-button'><i className={likedMeals.includes(meal.idMeal) ? 'liked fa fa-thumbs-up' : 'like-icon fa fa-thumbs-up'} aria-hidden="true"
+          ></i> ({likedMeals.filter((id) => id === meal.idMeal).length})
+          </button>          
         </div>
       ))}
       {showPopup && popupData && (

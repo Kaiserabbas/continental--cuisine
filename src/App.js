@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import 'font-awesome/css/font-awesome.min.css';
 import Meals from './components/Meals';
 import CuisineDropdown from './components/CuisineDropdown';
 
@@ -15,12 +16,10 @@ function App() {
   return (
     <Provider store={store}>
       <div className='app'>
-              <CuisineDropdown onCuisineChange={handleCuisineChange} />
-
-        <h1>Fusion  Bites Resturant</h1>
-
-        <Meals />
+      <CuisineDropdown onCuisineChange={handleCuisineChange} />
+      <Meals />
       </div>
+      
     </Provider>
   );
 }
