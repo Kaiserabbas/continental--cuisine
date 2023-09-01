@@ -7,7 +7,7 @@
     sans-serif;
   text-align: center;
   padding: 20px;
-  background-color: whitesmoke;
+  background-color: rgba(201, 178, 178, 0.2);
 }
 
 .app h1 {
@@ -19,7 +19,8 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
-  background-color: white;
+  background-color: rgba(201, 180, 180, 0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 10px;
   border-radius: 10px;
 }
@@ -36,11 +37,12 @@
 .select {
   border: none;
   font-size: 12px;
+  background: transparent;
 }
 
 .drop-list {
   border: none;
-
+  background: transparent;
 }
 
 .meals-list {
@@ -126,6 +128,8 @@
 }
 
 .meal-item {
+  display: flex;
+  flex-direction: column;
   padding: 50px;
 
 }
@@ -135,33 +139,45 @@
   flex-direction: column;
 }
 
-button {
-  font-size: 10px;
+.comment-button {
+  font-size: 12px;
   border: none;
-  padding: 5px 20px;
+  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
   margin: 5px;
   color: black;
-  background-color: whitesmoke;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: rgba(201, 180, 180, 0.4);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   transition: box-shadow 1s ease;
 }
 
-button:hover {
+.comment-button:hover {
   color: whitesmoke;
   background-color: black;
   box-shadow: 0 4px 10px rgb(175, 176, 177);
   transform: scale(1.05);
 }
 
+.comment-button:disabled {
+  cursor: not-allowed;
+}
+
+.like-button {
+  background: none;
+  border: none;
+}
+
 .like-icon {
-  font-size: 32px;
+  margin: 0 5px;
+  font-size: 20px;
   cursor: pointer;
   animation: heartBeat 1s infinite;
 }
 
 .liked {
+  margin: 0 5px;
+  font-size: 20px;
   color: blue;
   cursor: default;
   animation: none;
@@ -175,6 +191,6 @@ button:hover {
   }
 
   50% {
-    transform: scale(1.4);
+    transform: scale(1.1);
   }
 }
