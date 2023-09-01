@@ -15,11 +15,8 @@ function App() {
   return (
     <Provider store={store}>
       <div className='app'>
-              <CuisineDropdown onCuisineChange={handleCuisineChange} />
-
-        <h1>Fusion  Bites Resturant</h1>
-
-        <Meals />
+      <CuisineDropdown onCuisineChange={handleCuisineChange} />
+      <Meals />
       </div>
     </Provider>
   );
