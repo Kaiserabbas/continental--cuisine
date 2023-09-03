@@ -176,7 +176,7 @@
 .liked {
   margin: 0 5px;
   font-size: 20px;
-  color: blue;
+  color: rgb(247, 13, 13);
   cursor: default;
   animation: none;
 }
@@ -189,7 +189,7 @@
   }
 
   50% {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
 }
 
@@ -255,4 +255,34 @@ textarea:hover {
 
 .video {
   font-size: 24px;
+}
+
+
+.contact-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 40px 20px 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+input[type='text'],
+input[type='email'],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
