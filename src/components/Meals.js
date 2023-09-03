@@ -90,7 +90,7 @@ const renderIngredients = () => {
           <img src={meal.strMealThumb} alt={meal.strMeal} onClick={() => handleShowComments(meal.idMeal)}/>
           <h2>{meal.strMeal}</h2>
           <button className='comment-button'  onClick={() => handleShowComments(meal.idMeal)}>More Details...</button>
-          <button disabled={likedMeals.includes(meal.idMeal)} onClick={() => handleLike(meal.idMeal)} className='like-button'><i className={likedMeals.includes(meal.idMeal) ? 'liked fa fa-thumbs-up' : 'like-icon fa fa-thumbs-up'} aria-hidden="true"
+          <button disabled={likedMeals.includes(meal.idMeal)} onClick={() => handleLike(meal.idMeal)} className='like-button'><i className={likedMeals.includes(meal.idMeal) ? 'liked fa fa-heart' : 'like-icon fa fa-heart'} aria-hidden="true"
           ></i> ({likedMeals.filter((id) => id === meal.idMeal).length})
           </button>          
         </div>
