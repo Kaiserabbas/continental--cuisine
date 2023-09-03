@@ -24,7 +24,9 @@ function ContactPage() {
   };
 
   return (
-    <div className="contact-page">
+    <>
+    <hr/>
+       <div className="contact-page">
       <h2>Contact Us</h2>
       <p>
         If you have any questions or feedback, please feel free to contact us.
@@ -66,6 +68,7 @@ function ContactPage() {
         <button type="submit">Submit</button>
       </form>
     </div>
+   </>
   );
 }
 
