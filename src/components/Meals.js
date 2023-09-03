@@ -68,6 +68,20 @@ const handleClosePopup = () => {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
+const renderIngredients = () => {
+    let ingredientsElements = [];
+    for (let i = 1; i <= 20; i++) {
+        const item = popupData[`strIngredient${i}`]
+        const measure = popupData[`strMeasure${i}`];
+        const ingredient = item + measure;
+        if (ingredient && ingredient.trim() !== "") {
+            ingredientsElements.push(<span key={i} style={{ fontWeight: '700' }}>{item + "  : "}</span>);
+            ingredientsElements.push(<span key={i} style={{ color: 'maroon' }}>{measure}</span>);
+            ingredientsElements.push(<br key={`br-${i}`} />);
+        }
+    }
+    return ingredientsElements;
+};
 
   return (
     <div className='meals-list'>
@@ -86,8 +100,9 @@ const handleClosePopup = () => {
           <button onClick={handleClosePopup} className='close-button'>&times;</button>
           <h2>{popupData.strMeal}</h2>
           <img src={popupData.strMealThumb} alt={popupData.strMeal} />
-          <p> <h3>Reciepe:</h3> {popupData.strInstructions}</p>
-          <a href={popupData.strYoutube} target='_blank' rel='noopener noreferrer'> Watch on YouTube</a>
+          <p className='ingredients'><h3>Ingredients:</h3> {renderIngredients()} </p>
+          <p><h3>Reciepe:</h3> {popupData.strInstructions}</p>
+          <a href={popupData.strYoutube} target='_blank' rel='noopener noreferrer' className='video'> Watch on YouTube</a>
           <div className='comments-section'>
             <h3>Comments</h3>
             {comments.map((comment, index) => (
@@ -95,10 +110,12 @@ const handleClosePopup = () => {
                 <strong>{comment.name}</strong>: {comment.body}
               </div>
             ))}
-            <input type='text' placeholder='Name' value={commentName} onChange={e => setCommentName(e.target.value)} />
-            <textarea placeholder='Comment' value={commentText} onChange={e => setCommentText(e.target.value)}></textarea>
-            <button onClick={() => handleAddComment(popupData.idMeal)}>Add Comment</button>
           </div>
+            <form className='form'> 
+             <input type='text' placeholder='Name' value={commentName} onChange={e => setCommentName(e.target.value)} />
+             <textarea placeholder='Comment' value={commentText} onChange={e => setCommentText(e.target.value)}></textarea>
+             <button onClick={() => handleAddComment(popupData.idMeal)}>Add Comment</button>
+            </form>
         </div>
       )}
     </div>
