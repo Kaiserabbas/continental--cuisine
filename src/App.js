@@ -4,6 +4,7 @@ import store from './redux/store';
 import 'font-awesome/css/font-awesome.min.css';
 import Meals from './components/Meals';
 import CuisineDropdown from './components/CuisineDropdown';
+import ContactPage  from './components/Contact';
 
 import './styles.css';
 
@@ -14,12 +15,13 @@ function App() {
     console.log(FOOD_BASE_URL);
   };
   return (
+
     <Provider store={store}>
       <div className='app'>
       <CuisineDropdown onCuisineChange={handleCuisineChange} />
       <Meals />
+      <ContactPage/>
       </div>
-      
     </Provider>
   );
 }
