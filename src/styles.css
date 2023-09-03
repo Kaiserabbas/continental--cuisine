@@ -306,3 +306,9 @@ textarea {
   box-shadow: 0 4px 10px rgb(175, 176, 177);
   transform: scale(1.05);
 }
+
+hr {
+  margin: 100px 0;
+  box-shadow: 0 5px 10px rgba(255, 206, 206, 0.3);
+  border: 3px solid #ddd;
+}
