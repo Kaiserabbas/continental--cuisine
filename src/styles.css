@@ -286,3 +286,23 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+.contact-page button {
+  font-size: 12px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  color: black;
+  background-color: rgba(201, 180, 180, 0.4);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 1s ease;
+}
+
+.contact-page button:hover {
+  color: whitesmoke;
+  background-color: black;
+  box-shadow: 0 4px 10px rgb(175, 176, 177);
+  transform: scale(1.05);
+}
